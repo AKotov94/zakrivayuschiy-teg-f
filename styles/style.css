@@ -13,4 +13,140 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font);
+  font-variation-settings: 'wght' var(--font-weight-text);
+  background-image: var(--bg-gradient);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.container {
+  inline-size: var(--container-inline-size);
+  margin: 0 auto;
+  background-color: var(--container-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #000000;
+}
+
+.header {
+  font-family: var(--decorating-font);
+  padding: var(--header-padding) 0;
+  gap: 20px;
+  user-select: none;
+  margin-block-start: 100px;
+  margin-block-end: 100px;
+  font-size: var(--logo-font-size-slogan);
+}
+
+.header__title {
+  font-size: var(--logo-font-size-title);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.section {
+  font-size: 18px;
+}
+
+.section__title {
+  align-self: flex-start;
+  padding: 4px 10px;
+  font-weight: var(--font-weight-title);
+}
+
+.section__picture {
+  inline-size: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  border-block-start: 2px solid #000000;
+  border-block-end: 2px solid #000000;
+}
+
+.section__img-cover {
+  position: relative;
+  font-size: 0;
+}
+
+.section__img-cover::after {
+  content: attr(data-label);
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-family: var(--decorating-font);
+  font-size: 14px;
+  color: #000000;
+  opacity: 50%;
+  text-shadow: 1px 0 #fff, 0 1px #fff, -1px 0 #fff, 0 -1px #fff;
+  mix-blend-mode: hard-light;
+}
+
+@supports ((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
+  .section__img-cover::after {
+    -webkit-text-stroke: 1px #fff;
+    text-stroke: 1px #fff;
+    text-shadow:none;
+  }
+}
+
+.section__text {
+  padding: 0 25px 25px;
+}
+
+.section .section__text:first-of-type {
+  padding: 25px;
+}
+
+.button {
+  font-family: var(--decorating-font);
+  font-size: 14px;
+  border: 2px solid #000;
+  background-color: #fff;
+}
+
+.footer {
+  border: none;
+  background-color: transparent;
+  margin: 50px auto 100px;
+}
+
+.footer__button {
+  padding: 17px 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (width>375px) {
+  .footer__button {
+    flex-direction: row;
+  }
+}
+
+.footer_icon {
+  inline-size: 28px;
+}
+
+.footer__modal {
+  display: grid;
+}
+
+.modal_icon {
+  inline-size: 39px;
+}
+
+.modal__desc {
+  text-transform: uppercase;
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
 }
