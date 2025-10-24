@@ -39,6 +39,7 @@
   margin-block-start: 100px;
   margin-block-end: 100px;
   font-size: var(--logo-font-size-slogan);
+  line-height: 100%;
 }
 
 .header__title {
@@ -104,11 +105,72 @@
   padding: 25px;
 }
 
+.section__button-container {
+  inline-size: 100%;
+  padding: 0 25px 25px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
 .button {
   font-family: var(--decorating-font);
   font-size: 14px;
+  line-height: 90%;
   border: 2px solid #000;
   background-color: #fff;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.button__text {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  mix-blend-mode: difference;
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  inset: 0% -50%;
+  background-color: #000;
+  inline-size: 100%;
+  block-size: 100%;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out, translate 0.5s ease-in-out;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+button:hover::after {
+  transform: scaleX(100%);
+  translate: 50% 0%;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 #000;
+}
+
+.card__icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  inline-size: 38px;
+  aspect-ratio: 1;
+}
+
+.card__icon-button:focus {
+  outline: 2px solid #000;
+  outline-offset: -2px;
+}
+
+.card__like-button {
+  inline-size: 130px;
 }
 
 .footer {
@@ -131,22 +193,90 @@
   }
 }
 
-.footer_icon {
+.footer__icon {
   inline-size: 28px;
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
 }
 
 .footer__modal {
   display: grid;
+  grid-template-columns: min-content minmax(202px, 234px);
+  gap: 30px 20px;
+  border-width: 2px;
+  padding: 30px 40px;
+  margin: unset;
+  inline-size: max-content;
+  min-inline-size: min-content;
+  position: fixed;
+  inset: 50%  50%;
+  transform: translate(-50%, -50%);
 }
 
-.modal_icon {
+@media (width>375px) {
+  .footer__modal {
+    padding: 30px;
+  }
+}
+
+.footer__modal::backdrop {
+  background-color: #000;
+  opacity: 75%;
+}
+
+.footer__modal:not([open]) {
+  display: none;
+}
+
+.modal__icon {
   inline-size: 39px;
+  align-self: center;
 }
 
 .modal__desc {
   text-transform: uppercase;
+  font-family: var(--decorating-font);
+  font-size: 14px;
+  line-height: 150%;
 }
+
+.modal__button {
+  grid-column: span 2;
+}
+
+/* Если нужно фиксировать окно относительно основного контента:
 
 body:has(dialog[open]) {
   overflow: hidden;
 }
+ */
+
+ /* Анимации (SVG) */
+.like-icon {
+  
+}
+
+.like-icon:hover .heart_core {
+  fill: var(--fill-color);
+  transition: fill 0.3s linear;
+}
+
+ .heart_contour {
+  fill: var(--countour-color);
+  transition: fill 0.1s linear;
+ }
+
+ .heart_main-body {
+  fill: var(--unactive-color);
+  transition: fill 0.3s linear;
+ }
+
+ .heart_core {
+  fill: var(--unactive-color);
+  transition: fill 0.3s 0.03s linear;
+ }
+
+ .heart_saprks {
+  fill: var(--unactive-color);
+ }
