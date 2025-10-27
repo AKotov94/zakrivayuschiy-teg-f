@@ -26,7 +26,15 @@
 
   /* Цвета */
 
-  --container-bg-color: #ffffff;
+  --container-bg-color: #fff;
+  --main-color: #fff;
+  --invert-color: #000;
+  
+  /* Границы */
+
+  --main-border: 2px solid #000;
+  --text-shadow: 1px 0 #fff, 0 1px #fff, -1px 0 #fff, 0 -1px #fff;
+  --text-stroke: 1px #fff;
 
   /* Анимации */
 
