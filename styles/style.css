@@ -13,7 +13,7 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main-font);
+  font-family: var(--main-font), sans-serif;
   font-variation-settings: 'wght' var(--font-weight-text);
   background-image: var(--bg-gradient);
   background-size: cover;
@@ -32,7 +32,7 @@
 }
 
 .header {
-  font-family: var(--decorating-font);
+  font-family: var(--decorating-font), sans-serif;
   padding: var(--header-padding) 0;
   gap: 20px;
   user-select: none;
@@ -50,19 +50,16 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-}
-
-.section {
   font-size: 18px;
 }
 
-.section__title {
+.article__title {
   align-self: flex-start;
   padding: 4px 10px;
   font-weight: var(--font-weight-title);
 }
 
-.section__picture {
+.article__picture {
   inline-size: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
@@ -71,17 +68,17 @@
   border-block-end: var(--main-border);
 }
 
-.section__img-cover {
+.article__img-cover {
   position: relative;
   font-size: 0;
 }
 
-.section__img-cover::after {
+.article__img-cover::after {
   content: attr(data-label);
   position: absolute;
   top: 25px;
   right: 25px;
-  font-family: var(--decorating-font);
+  font-family: var(--decorating-font), sans-serif;
   font-size: 14px;
   color: var(--invert-color);
   opacity: 0.5;
@@ -92,22 +89,23 @@
 @supports (
   (text-stroke: var(--text-stroke)) or (-webkit-text-stroke: var(--text-stroke))
 ) {
-  .section__img-cover::after {
-    -webkit-text-stroke: var(--text-stroke);
-    text-stroke: var(--text-stroke);
-    text-shadow: none;
-  }
-}
 
-.section__text {
+    .article__img-cover::after {
+      -webkit-text-stroke: var(--text-stroke);
+      text-stroke: var(--text-stroke);
+      text-shadow: none;
+    }
+  }
+
+.article__text {
   padding: 0 25px 25px;
 }
 
-.section .section__text:first-of-type {
+article .article__text:first-of-type {
   padding: 25px;
 }
 
-.section__button-container {
+.article__button-container {
   inline-size: 100%;
   padding: 0 25px 25px;
   display: flex;
@@ -116,7 +114,7 @@
 }
 
 .button {
-  font-family: var(--decorating-font);
+  font-family: var(--decorating-font), sans-serif;
   font-size: 14px;
   line-height: 90%;
   border: var(--main-border);
@@ -185,13 +183,13 @@ button:hover::after {
   inline-size: 130px;
 }
 
-.footer {
+.final-element {
   border: none;
   background-color: transparent;
   margin: 50px auto 100px;
 }
 
-.footer__button {
+.final-element__button {
   padding: 17px 20px;
   display: flex;
   align-items: center;
@@ -200,19 +198,20 @@ button:hover::after {
 }
 
 @media (width>375px) {
-  .footer__button {
+
+  .final-element__button {
     flex-direction: row;
   }
 }
 
-.footer__icon {
+.final-element__icon {
   inline-size: 28px;
   position: relative;
   z-index: 1;
   mix-blend-mode: difference;
 }
 
-.footer__modal {
+.final-element__modal {
   display: grid;
   grid-template-columns: min-content minmax(202px, 234px);
   gap: 30px 20px;
@@ -227,17 +226,18 @@ button:hover::after {
 }
 
 @media (width>375px) {
-  .footer__modal {
+
+  .final-element__modal {
     padding: 30px;
   }
 }
 
-.footer__modal::backdrop {
+.final-element__modal::backdrop {
   background-color: var(--invert-color);
   opacity: 0.75;
 }
 
-.footer__modal:not([open]) {
+.final-element__modal:not([open]) {
   display: none;
 }
 
@@ -248,7 +248,7 @@ button:hover::after {
 
 .modal__desc {
   text-transform: uppercase;
-  font-family: var(--decorating-font);
+  font-family: var(--decorating-font), sans-serif;
   font-size: 14px;
   line-height: 150%;
 }
@@ -297,6 +297,27 @@ body:has(dialog[open]) {
 
 /* Анимации (SVG) */
 
+
+.heart_contour {
+  fill: var(--countour-color);
+  transition: fill 0.1s linear;
+}
+
+.heart_main-body {
+  fill: var(--unactive-color);
+  transition: fill 0.3s linear;
+}
+
+.heart_core {
+  fill: var(--unactive-color);
+  transition: fill 0.3s 0.03s linear;
+}
+
+.heart_saprks {
+  fill: var(--unactive-color);
+}
+
+
 .like-icon .heart {
   transform-origin: center;
 }
@@ -341,24 +362,5 @@ body:has(dialog[open]) {
 }
 
 .like-icon.is-liked .heart_saprks {
-  animation: heart_sparks 0.3s 0.3s ease-in;
-}
-
-.heart_contour {
-  fill: var(--countour-color);
-  transition: fill 0.1s linear;
-}
-
-.heart_main-body {
-  fill: var(--unactive-color);
-  transition: fill 0.3s linear;
-}
-
-.heart_core {
-  fill: var(--unactive-color);
-  transition: fill 0.3s 0.03s linear;
-}
-
-.heart_saprks {
-  fill: var(--unactive-color);
+  animation: spark-appearance_fadeIn 0.3s 0.3s ease-in;
 }

@@ -11,6 +11,7 @@
 */
 
 @keyframes heart_scale {
+
   from {
     transform: scale(1);
   }
@@ -20,7 +21,8 @@
   }
 }
 
-@keyframes heart_sparks {
+@keyframes spark-appearance_fadeIn {
+  
   from {
     fill: var(--unactive-color);
   }
