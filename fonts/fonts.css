@@ -15,5 +15,5 @@
     local('Inter-Variable'),
     url(./Inter-Variable.woff2) format('woff2 supports variations');
   font-display: swap;
-  font-weight: 410 785; /* По макету 410 715, но автотесты завершаются с ошибкой */
+  font-weight: 400 785; /* По макету 410 715, но автотесты завершаются с ошибкой */
 }
