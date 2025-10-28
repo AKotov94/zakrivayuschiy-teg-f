@@ -39,11 +39,11 @@
   margin-block-start: 100px;
   margin-block-end: 100px;
   font-size: var(--logo-font-size-slogan);
+  text-transform: uppercase;
 }
 
 .header__title {
   font-size: var(--logo-font-size-title);
-  text-transform: uppercase;
   line-height: inherit;
 }
 
@@ -216,6 +216,7 @@ article .article__text:first-of-type {
 }
 
 @media (width>375px) {
+
   .final-element__icon {
     inline-size: 21px;
   }
@@ -266,9 +267,6 @@ article .article__text:first-of-type {
 .modal__button {
   grid-column: span 2;
   min-block-size: 38px;
-}
-
-.uppercase {
   text-transform: uppercase;
 }
 
