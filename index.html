@@ -17,7 +17,7 @@
   <body class="page">
     <header class="header container">
       <a href="#0"><span>&lt;/HTML&gt;</span></a>
-      <h1 class="header__title">ЗАКРЫВАЮЩИй ТЕГ</h1>
+      <h1 class="header__title">закрывающи<span>й</span> тег</h1>
     </header>
     <main class="main">
       <article class="container">
@@ -27,7 +27,8 @@
         <div class="article__img-cover" data-label="START" aria-hidden="true">
           <img 
             src="./images/start.png"
-            alt="Фотография ног в кедах с нарисованной на полу стрелкой, указывающей вперед" class="article__picture"
+            alt="Фотография ног в кедах с нарисованной на полу стрелкой, указывающей вперед"
+            class="article__picture"
             loading="lazy"
           >
         </div>
@@ -80,7 +81,7 @@
           <img
             src="./images/whitelist.png"
             alt="Скриншот редактора кода вначале первой проектной работы"
-            class="article__picture bright"
+            class="article__picture filter-brightness"
             loading="lazy"
           >
         </div>
@@ -135,7 +136,7 @@
           <img
             src="./images/verstka.png"
             alt="Фотография блокнота и ноутбука на столе, с наложенным строками кода"
-            class="article__picture contrast"
+            class="article__picture filter-contrast"
             loading="lazy"
           >
         </div>
@@ -188,7 +189,7 @@
           <img
             src="./images/perfect.png"
             alt="Фотография механизма часов крупным планом"
-            class="article__picture blur"
+            class="article__picture filter-blur"
             loading="lazy"
           >
         </div>
@@ -243,7 +244,7 @@
           <img
             src="./images/relate.png"
             alt="Схематичное изображение социальных связей"
-            class="article__picture black-n-white"
+            class="article__picture filter-grayscale"
             loading="lazy"
           >
         </div>
@@ -299,7 +300,7 @@
           <img
             src="./images/nokomment.png"
             alt="Фотография кошки"
-            class="article__picture saturate"
+            class="article__picture filter-saturate"
             loading="lazy"
           >
         </div>
@@ -349,7 +350,7 @@
           <img 
             src="./images/focus.png"
             alt="Фотография объектива крупным планом в руке человека"
-            class="article__picture sepia"
+            class="article__picture filter-sepia"
             loading="lazy"
             >
         </div>
@@ -473,13 +474,13 @@
           >
             <use href="./svg/floppy.svg#floppy"></use>
           </svg>
-          <span class="modal__desc">Вставьте дискету, чтобы продолжить</span>
+          <span class="modal__desc">вставьте дискету, чтобы продолжить</span>
           <button
             class="button modal__button"
             type="button"
             onclick="window['final-element__modal'].close()"
           >
-            <p class="button__text">ОК</p>
+            <p class="button__text"><span class="uppercase">ок</span></p>
           </button>
         </dialog>
       </div>

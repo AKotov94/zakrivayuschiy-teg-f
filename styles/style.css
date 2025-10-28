@@ -39,11 +39,12 @@
   margin-block-start: 100px;
   margin-block-end: 100px;
   font-size: var(--logo-font-size-slogan);
-  line-height: 100%;
 }
 
 .header__title {
   font-size: var(--logo-font-size-title);
+  text-transform: uppercase;
+  line-height: inherit;
 }
 
 .main {
@@ -56,7 +57,7 @@
 .article__title {
   align-self: flex-start;
   padding: 4px 10px;
-  font-weight: var(--font-weight-title);
+  font-variation-settings: 'wght' var(--font-weight-title);
 }
 
 .article__picture {
@@ -110,7 +111,7 @@ article .article__text:first-of-type {
   padding: 0 25px 25px;
   display: flex;
   justify-content: flex-end;
-  gap: 12px;
+  gap: 6px; /* Значение по PP */
 }
 
 .button {
@@ -120,6 +121,7 @@ article .article__text:first-of-type {
   border: var(--main-border);
   background-color: var(--main-color);
   position: relative;
+  box-shadow: none;
   transition: box-shadow 0.3s ease;
 }
 
@@ -147,7 +149,7 @@ article .article__text:first-of-type {
   cursor: pointer;
 }
 
-button:hover::after {
+.button:hover::after {
   transform: scaleX(100%);
   translate: 50% 0%;
 }
@@ -168,6 +170,8 @@ button:hover::after {
   cursor: pointer;
   inline-size: 38px;
   aspect-ratio: 1;
+  outline: none;
+  transition: outline 0.3s linear;
 }
 
 .card__icon-button:focus {
@@ -186,7 +190,7 @@ button:hover::after {
 .final-element {
   border: none;
   background-color: transparent;
-  margin: 50px auto 100px;
+  margin: 0 auto 100px;
 }
 
 .final-element__button {
@@ -209,6 +213,12 @@ button:hover::after {
   position: relative;
   z-index: 1;
   mix-blend-mode: difference;
+}
+
+@media (width>375px) {
+  .final-element__icon {
+    inline-size: 21px;
+  }
 }
 
 .final-element__modal {
@@ -255,7 +265,11 @@ button:hover::after {
 
 .modal__button {
   grid-column: span 2;
-  block-size: 38px;
+  min-block-size: 38px;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 /* Если нужно фиксировать окно относительно основного контента:
@@ -267,27 +281,27 @@ body:has(dialog[open]) {
 
 /* Фильтры */
 
-.bright {
+.filter-brightness {
   filter: brightness(200%);
 }
 
-.contrast {
+.filter-contrast {
   filter: contrast(40%);
 }
 
-.blur {
+.filter-blur {
   filter: blur(2px);
 }
 
-.black-n-white {
+.filter-grayscale {
   filter: grayscale(0.8);
 }
 
-.saturate {
+.filter-saturate {
   filter: saturate(200%);
 }
 
-.sepia {
+.filter-sepia {
   filter: sepia(80%);
 }
 
